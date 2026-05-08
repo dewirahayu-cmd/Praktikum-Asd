@@ -1,5 +1,6 @@
 package Pertemuan12;
 
+import java.util.Scanner; // modifikasi input dari keyboard 
 public class SingleLinkedList08 {
 
     NodeMahasiswa08 head;
@@ -83,4 +84,4 @@ public class SingleLinkedList08 {
         }
     }
 
-    
+}
