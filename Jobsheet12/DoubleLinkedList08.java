@@ -89,4 +89,16 @@ public class DoubleLinkedList08 {
             tail.next = null;
         }
     }
+
+    public void print() {
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+            return;
+        }
+        Node08 current = head;
+        while (current != null) {
+            current.data.tampil();
+            current = current.next;
+        }
+    }
 }
