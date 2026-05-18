@@ -60,36 +60,42 @@ public class DoubleLinkedList08 {
         System.out.println("Data berhasil disisipkan setelah NIM " + keyNim);
     }
 
+    // Modifikasi Percobaan 2 Pertanyaan No.2
+    // removeFirst() ditambahkan tampilan data yang berhasil dihapus
     public void removeFirst() {
-        if (isEmpty()) {
-            System.out.println("Linked List kosong.");
-            return;
-        }
-        if (head == tail) {
-            head = tail = null;
-        } else {
-            System.out.println("Data berhasil dihapus.");
-            head.data.tampil();
-            head = head.next;
-            head.prev = null;
-        }
+    if (isEmpty()) {
+        System.out.println("Linked List kosong.");
+        return;
     }
+    System.out.println("Data berhasil dihapus.");
+    head.data.tampil();
+    if (head == tail) {
+        head = tail = null;
+    } else {
+        head = head.next;
+        head.prev = null;
+    }
+}
 
+    // Modifikasi Percobaan 2 Pertanyaan No.2
+    // removeLast() ditambahkan tampilan data yang berhasil dihapus
     public void removeLast() {
-        if (isEmpty()) {
-            System.out.println("Linked List kosong.");
-            return;
-        }
-        if (head == tail) {
-            head = tail = null;
-        } else {
-            System.out.println("Data berhasil dihapus.");
-            tail.data.tampil();
-            tail = tail.prev;
-            tail.next = null;
-        }
+    if (isEmpty()) {
+        System.out.println("Linked List kosong.");
+        return;
     }
+    System.out.println("Data berhasil dihapus.");
+    tail.data.tampil();
+    if (head == tail) {
+        head = tail = null;
+    } else {
+        tail = tail.prev;
+        tail.next = null;
+    }
+}
 
+    // Modifikasi Percobaan 1 Pertanyaan No.5
+    // print() ditambahkan pengecekan jika linked list kosong
     public void print() {
         if (isEmpty()) {
             System.out.println("Linked List masih kosong.");
@@ -99,6 +105,20 @@ public class DoubleLinkedList08 {
         while (current != null) {
             current.data.tampil();
             current = current.next;
+        }
+    }
+
+    // Modifikasi Percobaan 1 Pertanyaan No.6
+    // printReverse() untuk menampilkan data dari tail ke head
+    public void printReverse() {
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+            return;
+        }
+        Node08 current = tail;
+        while (current != null) {
+            current.data.tampil();
+            current = current.prev;
         }
     }
 }
