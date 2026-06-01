@@ -42,7 +42,7 @@ public class MainKrs08 {
 
             switch (pilihan) {
 
-                case 1: // Tambah mahasiswa ke antrian
+                case 1: 
                     System.out.println("\n--- Tambah Mahasiswa ke Antrian ---");
                     System.out.print("NIM   : ");
                     String nim = sc.nextLine();
@@ -56,23 +56,23 @@ public class MainKrs08 {
                     antrian.tambahAntrian(mhs);
                     break;
 
-                case 2: // Panggil antrian proses KRS (2 mahasiswa)
+                case 2: 
                     antrian.panggilAntrian();
                     break;
 
-                case 3: // Tampilkan semua antrian
+                case 3: 
                     antrian.tampilkanSemua();
                     break;
 
-                case 4: // Tampilkan 2 antrian terdepan
+                case 4: 
                     antrian.tampilkanDuaTerdepan();
                     break;
 
-                case 5: // Tampilkan antrian paling akhir
+                case 5: 
                     antrian.tampilkanAkhir();
                     break;
 
-                case 6: // Cek antrian kosong
+                case 6: 
                     if (antrian.isEmpty()) {
                         System.out.println("Status: Antrian KOSONG.");
                     } else {
@@ -80,7 +80,7 @@ public class MainKrs08 {
                     }
                     break;
 
-                case 7: // Cek antrian penuh
+                case 7: 
                     if (antrian.isFull()) {
                         System.out.println("Status: Antrian PENUH.");
                     } else {
@@ -88,23 +88,23 @@ public class MainKrs08 {
                     }
                     break;
 
-                case 8: // Kosongkan antrian
+                case 8: 
                     antrian.clearAntrian();
                     break;
 
-                case 9: // Cetak jumlah antrian
+                case 9: 
                     antrian.cetakJumlahAntrian();
                     break;
 
-                case 10: // Cetak jumlah yang sudah KRS
+                case 10: 
                     antrian.cetakSudahKRS();
                     break;
 
-                case 11: // Cetak jumlah yang belum KRS
+                case 11: 
                     antrian.cetakBelumKRS();
                     break;
 
-                case 0: // Keluar
+                case 0: 
                     System.out.println("\n=== Rekap Akhir ===");
                     antrian.cetakJumlahAntrian();
                     antrian.cetakSudahKRS();
