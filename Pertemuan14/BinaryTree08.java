@@ -38,6 +38,67 @@ public class BinaryTree08 {
         }
     }
 
+    // TUGAS 1: Method untuk menambahkan node secara rekursif (addRekursif)
+    public void addRekursif(Mahasiswa08 mahasiswa) {
+        root = addRekursifHelper(root, mahasiswa);
+    }
+
+    private Node08 addRekursifHelper(Node08 current, Mahasiswa08 mahasiswa) {
+        if (current == null) {
+            return new Node08(mahasiswa);
+        }
+        if (mahasiswa.ipk < current.mahasiswa.ipk) {
+            current.left = addRekursifHelper(current.left, mahasiswa);
+        } else if (mahasiswa.ipk > current.mahasiswa.ipk) {
+            current.right = addRekursifHelper(current.right, mahasiswa);
+        }
+        return current;
+    }
+
+    // TUGAS 2: Method menampilkan data mahasiswa IPK paling kecil (cariMinIPK)
+    public void cariMinIPK() {
+        if (isEmpty()) {
+            System.out.println("Binary tree kosong");
+            return;
+        }
+        Node08 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        System.out.println("Mahasiswa dengan IPK Terkecil:");
+        current.mahasiswa.tampilInformasi();
+    }
+
+    // TUGAS 2: Method menampilkan data mahasiswa IPK paling besar (cariMaxIPK)
+    public void cariMaxIPK() {
+        if (isEmpty()) {
+            System.out.println("Binary tree kosong");
+            return;
+        }
+        Node08 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        System.out.println("Mahasiswa dengan IPK Terbesar:");
+        current.mahasiswa.tampilInformasi();
+    }
+
+    // TUGAS 3: Method menampilkan data mahasiswa dengan IPK di atas batas tertentu (tampilMahasiswaIPKdiAtas)
+    public void tampilMahasiswaIPKdiAtas(double ipkBatas) {
+        System.out.println("Daftar Mahasiswa dengan IPK di atas " + ipkBatas + ":");
+        tampilIPKdiAtasHelper(root, ipkBatas);
+    }
+
+    private void tampilIPKdiAtasHelper(Node08 node, double ipkBatas) {
+        if (node != null) {
+            tampilIPKdiAtasHelper(node.left, ipkBatas);
+            if (node.mahasiswa.ipk > ipkBatas) {
+                node.mahasiswa.tampilInformasi();
+            }
+            tampilIPKdiAtasHelper(node.right, ipkBatas);
+        }
+    }
+
     public boolean find(double ipk) {
         Node08 current = root;
         while (current != null) {
@@ -147,6 +208,8 @@ public class BinaryTree08 {
                 }
             } else {
                 Node08 successor = getSuccessor(current);
+                //System.out.println("Jika 2 anak, current = ");
+                //successor.mahasiswa.tampilInformasi ();
                 if (current == root) {
                     root = successor;
                 } else {

@@ -5,7 +5,7 @@ public class BinaryTreeArrayMain08 {
         BinaryTreeArray08 bta = new BinaryTreeArray08();
 
         Mahasiswa08 mhs1 = new Mahasiswa08("244160121", "Ali", "A", 3.57);
-        Mahasiswa08 mhs2 = new Mahasiswa08("244160185", "Candra", "C", 3.41);
+        Mahasiswa08 mhs2 = new Mahasiswa08("24w4160185", "Candra", "C", 3.41);
         Mahasiswa08 mhs3 = new Mahasiswa08("244160221", "Badar", "B", 3.75);
         Mahasiswa08 mhs4 = new Mahasiswa08("244160220", "Dewi", "B", 3.35);
         Mahasiswa08 mhs5 = new Mahasiswa08("244160131", "Devi", "A", 3.48);
