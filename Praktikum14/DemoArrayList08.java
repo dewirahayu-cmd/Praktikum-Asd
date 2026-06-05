@@ -1,6 +1,7 @@
 package Praktikum14;
 
 import java.util.ArrayList;
+import java.util.Collections; 
 
 public class DemoArrayList08 {
     public static void main(String[] args) {
@@ -15,23 +16,36 @@ public class DemoArrayList08 {
         
         customers.add(2, new Customer08(100, "Rosa"));
         
-        System.out.println (customers.indexOf(customer2));
+        System.out.println("Index customer2: " + customers.indexOf(customer2));
         
         Customer08 customer = customers.get(1);
-        System.out.println(customer.name);
+        System.out.println("Nama pada index 1: " + customer.name);
         customer.name = "Budi Utomo";
         
-        ArrayList<Customer08> newCustomers = new ArrayList<>();
-        newCustomers.add(new Customer08(201, "Della"));
-        newCustomers.add(new Customer08(202, "Victor"));
-        newCustomers.add(new Customer08(203, "Sarah"));
+        System.out.println("\n=== Data Sebelum Diurutkan ===");
+        for (Customer08 cust : customers) {
+            System.out.println(cust.toString());
+        }
+        
+        // Modifikasi 1: Pengurutan Objek Kustom (Collection of Objects)
+        customers.sort((c1, c2) -> c1.name.compareTo(c2.name));
+        
+        System.out.println("\n=== Data Setelah Diurutkan Berdasarkan Nama (A-Z) ===");
+        for (Customer08 cust : customers) {
+            System.out.println(cust.toString());
+        }
 
-        customers.addAll(newCustomers);
-
-for (Customer08 cust : customers) {
-    System.out.println(cust.toString());
-    }
-
-    System.out.println(customers);
+        // Modifikasi 2: Pengurutan Tipe Data Standar (String)
+        System.out.println("\n=== Contoh Pengurutan Data String Standar ===");
+        ArrayList<String> daftarSiswa = new ArrayList<>();
+        daftarSiswa.add("Zainab");
+        daftarSiswa.add("Andi");
+        daftarSiswa.add("Rara");
+        
+        System.out.println("Daftar Siswa Sebelum Sort: " + daftarSiswa);
+        
+        Collections.sort(daftarSiswa);
+        
+        System.out.println("Daftar Siswa Setelah Sort : " + daftarSiswa);
     }
 }
